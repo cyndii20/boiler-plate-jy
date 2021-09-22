@@ -10,6 +10,10 @@ const userSchema = mongoose.Schema({
         trim: true, //space없애주는 역할
         uniqe: 1
     },
+    password: {
+        type: String,
+        minlength: 5
+    },
     lastname:{
         type: String,
         maxlength: 50
@@ -30,4 +34,4 @@ const userSchema = mongoose.Schema({
 const User = mongoose.model('User', userSchema)  //이름, 스키마
 
 //model을 다른 파일로도 사용 가능하도록 export
-module.exports = { user }
+module.exports = { User }
